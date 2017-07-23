@@ -41,17 +41,17 @@ class Student extends Person {
 // all the items in the `attendance` Array.
 
 
-  calculateAttendace(){
-    if (this.attendance.length > 0) {
-    let counter = 0;
-    for (let mark of this.attendance){
-      counter = counter + mark;
-    }
-    let attendancePercentage = counter / this.attendance.length * 100;
-    return '${attendacePercentage}%';
-    } else {
-      return "0%";
-    }
+   calculateAttendance(){
+         if (this.attendance.length > 0) {
+             let counter = 0;
+             for (let mark of this.attendance){
+                 counter = counter + mark;
+             }
+             let attendancePercentage = counter / this.attendance.length * 100;
+             return `${attendancePercentage}%`;
+         } else {
+            return "0%";
+       }
   }
 }
 
@@ -85,14 +85,13 @@ class Course {
     // to update the roster display by calling `updateRoster()`. You will need
     // to reference the Class instance using `this` as a parameter for
     // `updateRoster()`, so it might look like this: `updateRoster(this)`.
-  addStudent(){
-    let name = prompt('Please enter your name.');
-    let email = prompt('What is your email address?');
-    let newStudent = new Student(name, email);
-    this.students.push(newStudent);
-    updateRoster(this);
-  }
-
+addStudent(){
+     let name = prompt('Enter your full name:');
+     let email = prompt('Enter your email address:');
+     let newStudent = new Student(name, email);
+     this.students.push(newStudent);
+     updateRoster(this);
+    }
     /////////////////////////////////////////
     // TODO: ADD the `setTeacher()` method /////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
@@ -134,6 +133,7 @@ class Course {
     }else{
       student.attendance.push(0);
     }
+      updateRoster(this);
    }
     
 
